@@ -1,0 +1,13 @@
+{
+  "displayName" : "Office 365 16.0 Users",
+  "author" : ["Erich Strelow"],
+  "contributor" : [],
+  "supportedAgent" : ["Windows"],
+  "version" : "1.0",
+  "licence" : "apache_2_0",
+  "description" : {
+    "fr" : "Remonte les données des utilisateurs d'Office 365 déployés",
+    "en" : "Retrieve Office 365 users deployed info",
+    "es" : "Obtiene los datos de usuarios Office 365 desplegados"
+  }
+}
