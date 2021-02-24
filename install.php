@@ -21,5 +21,8 @@ function extension_delete_o36516user()
     $commonObject->sqlQuery("DROP TABLE `o36516user`");
 }
 
+function extension_upgrade_o36516user() {
+}
+
 
 ?>
