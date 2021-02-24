@@ -58,13 +58,13 @@ For k = lbound(aUsers) To UBound(aUsers)
          IsoDate=d.Year & "-" & Right("00" & d.Month,2) & "-"  & Right("00" & d.Day,2)
 		 IsoTime=Right("00" & d.hours,2) & ":" & Right("00" & d.minutes,2) & ":" & Right("00" & d.seconds,2)
 
-		 wscript.echo "<OFFICE365_16USER>" &  VbCrLf &_
+		 wscript.echo "<O36516USER>" &  VbCrLf &_
 		    "<SID>" & sid & "</SID>" & VbCrLf &_
 		    "<GUID>" & conn & "</GUID>" & VbCrLf &_
 		    "<EMAIL>" & email & "</EMAIL>" & VbCrLf &_
 		    "<NAME>" & name & "</NAME>" & VbCrLf &_
 		    "<LASTLOGIN>" & IsoDate & "T" & IsoTime & "Z" & "</LASTLOGIN>" & VbCrLf &_
-            "</OFFICE365_16USER>"
+            "</O36516USER>"
       End if
    End if
 Next
