@@ -10,9 +10,17 @@ The fields exposed by the plugin are as follows:
 
    -SID is the local userid à la WMIC.
    -GUID is the Office 365 ObjectId. It's the same valued used on Powershell's
-    Get-AzureADUser
+    Get-AzureADUser, so it's included to allow for further integration.
    -Email is the O365 user's email address
    -LastLogin is the last time an LDAP authentication ocurred with O365
+   -Name is the common display name of the user
+
+In a situation in which the computer has passed through more than one user,
+the plugin might report multiple O365 accounts. The LastLogin attribute
+is included in order to help discriminate the most current one.
+
+In a situation in which the computer is a multi-user server, the plugin
+should report every local user with an activated Office 365.
 
 INSTALLATION
 
@@ -32,7 +40,7 @@ you are supposed to have a full set of artifacts. What worked for me was:
    7. You can now restart/reload your web server. At this point, the OCS server is
       able to collect the data. Please note that any addition of a perl module like this
       component might be a webserver start breaker. Double check the file locations and
-      permissions. Removing the o36516user.conf is your escape plan here.
+      permissions. 
    8. Create the folder cd_o36516user to your ocs section. It might be
       /usr/share/ocsinventory-reports/ocsreports/plugins/computer_detail.
    9. Edit your plugins report catalog and add the cd_o36516user section.
