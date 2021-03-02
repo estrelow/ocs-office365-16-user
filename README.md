@@ -8,12 +8,16 @@ on which computer.
 
 The fields exposed by the plugin are as follows:
 
-   -SID is the local userid à la WMIC.
-   -GUID is the Office 365 ObjectId. It's the same valued used on Powershell's
+   * SID is the local userid à la WMIC.
+
+   * GUID is the Office 365 ObjectId. It's the same valued used on Powershell's
     Get-AzureADUser, so it's included to allow for further integration.
-   -Email is the O365 user's email address
-   -LastLogin is the last time an LDAP authentication ocurred with O365
-   -Name is the common display name of the user
+
+   * Email is the O365 user's email address
+
+   * LastLogin is the last time an LDAP authentication ocurred with O365
+
+   * Name is the common display name of the user
 
 In a situation in which the computer has passed through more than one user,
 the plugin might report multiple O365 accounts. The LastLogin attribute
@@ -46,12 +50,14 @@ you are supposed to have a full set of artifacts. What worked for me was:
    9. Edit your plugins report catalog and add the cd_o36516user section.
       The file might be /usr/share/ocsinventory-reports/ocsreports/config/computer/plugins.xml
       Add the following tag:
+
       <plugin id="cd_o36516user">
          <label>Office 365 16.0 user</label>
          <system>1</system>
          <category>other</category>
          <available>o36516user</available>
       </plugin>
+
    10. Make sure to set ownership or access on these files to the apache service user.
    11. At this point, the reporting web page should be able to show the data.
    12. Deploy the agent/o36516user.vbs to the target hosts computers.
